@@ -1,78 +1,106 @@
-# Test Automation with Playwright
+🚀 Automated QA Pipeline Demo  
+End-to-end test automation framework built with **Playwright + TypeScript**.  
+Integrated into **GitHub Actions** with **Allure reporting** and **Slack alerts** — designed to cut manual regression testing by 70% and provide real-time visibility into quality.
 
-### Project: Automated QA Pipeline (Public Demo)
+![Status](https://img.shields.io/badge/Status-Ready-brightgreen)
+![Stack](https://img.shields.io/badge/Stack-Playwright%20%7C%20TypeScript%20%7C%20GitHub%20Actions-blue)
+![Reporting](https://img.shields.io/badge/Reporting-Allure-orange)
+![Alerts](https://img.shields.io/badge/Alerts-Slack-purple)
 
-![Project Status](https://img.shields.io/badge/Status-Complete-green)
-![Build Status](https://github.com/stevenstafford72/qa-automation-demo/actions/workflows/playwright.yml/badge.svg)
-![Technologies](https://img.shields.io/badge/Technologies-Playwright%2C%20TypeScript%2C%20GitHub%20Actions-blue)
+A scalable QA automation pipeline built with **Playwright + TypeScript**, integrated with **GitHub Actions**, publishing **Allure** reports, and sending **Slack** notifications.  
+This repository is a **public demo**; the original production pipeline lives in a private company repo.
 
-## Project Overview
+---
 
-This repository features a robust QA automation pipeline that validates key user flows and functionality on a web application. This project is a **public demo** created to showcase skills. The **original pipeline is a private repository** used for company purposes.
+## 🧭 TL;DR (What Recruiters Should Know)
+- **77 automated tests** (demo set) validate high-value user journeys (auth, forms, navigation).  
+- **Cross-browser** coverage: Chromium, Firefox, WebKit, Edge.  
+- **CI/CD native**: runs on push/PR and on a **daily scheduled regression**.  
+- **Stakeholder reports**: Allure dashboards uploaded automatically (GitHub Pages).  
+- **Real-time visibility**: Slack alerts with run status + report links.  
 
-Built with **Playwright** and **TypeScript**, the pipeline is fully integrated with **GitHub Actions** to provide continuous quality assurance.
+> **Role & Ownership:** Designed, implemented, and maintain the entire pipeline end-to-end (architecture, tests, CI, reporting, notifications).
 
-The goal of this project is to showcase the ability to:
-* Design and implement a scalable, end-to-end test suite.
-* Build a resilient test framework using industry-standard practices.
-* Integrate automated testing into a CI/CD workflow for efficient, daily test runs.
-* Generate comprehensive, stakeholder-friendly reports and real-time alerts.
+---
 
-## Key Features
+## ✨ Key Capabilities
+- **Comprehensive Test Suite**: Modular specs + page objects; fast smoke set + deeper regression.  
+- **Deterministic Runs**: Retries, traces, screenshots, and video on failure.  
+- **Configurable Environments**: `BASE_URL` and secrets via GitHub Actions.  
+- **Actionable Reporting**: Allure’s trends, failures, logs, attachments.  
+- **Team Signals**: Slack webhook posts on success/failure with links to reports.  
 
-* **Comprehensive Test Suite**: The pipeline runs **77 automated tests** covering critical user journeys, including user authentication, form submissions, and multi-page navigation.
-* **CI/CD Integration**: Tests are automatically triggered on every push to the `main` branch via GitHub Actions. This provides immediate feedback and continuous quality checks.
-* **Cross-Browser Testing**: The test suite executes across multiple browsers, including **Chromium, Firefox, WebKit, and Microsoft Edge**, to ensure broad compatibility.
-* **Real-Time Alerts**: Test run summaries and statuses are sent to a dedicated Slack channel, providing real-time visibility to the team.
-    
-    
-    
-* **Detailed Reporting**: A comprehensive **Allure Report** is automatically generated upon completion of each test run, providing a detailed breakdown of test results, metrics, and logs for easy analysis.
+---
 
-## Technical Stack
+## 🧩 Tech Stack
+- **Test Framework:** Playwright (`@playwright/test`)  
+- **Language:** TypeScript  
+- **CI/CD:** GitHub Actions (matrix, caching, artifacts)  
+- **Reporting:** Allure  
+- **Alerts:** Slack Webhooks  
 
-* **Test Framework**: Playwright
-* **Language**: TypeScript
-* **CI/CD**: GitHub Actions
-* **Reporting**: Allure Report
-* **Alerts**: Slack Webhooks
-* **Runtime**: Node.js
+---
 
-## Getting Started
-
-To run the tests locally, follow these steps:
+## 🚀 Getting Started
 
 ### Prerequisites
+- Node.js **v18+** (LTS recommended)  
+- Git  
+- (Optional) Allure CLI for local viewing
 
-* Node.js (v14 or higher)
-* npm (or yarn)
+### Setup
+```bash
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
+cp .env.example .env   # set BASE_URL and SLACK_WEBHOOK_URL if needed
+npm install
+npx playwright install --with-deps
+Run Tests
+bash
+Copy code
+# all tests (headless)
+npx playwright test
 
-### Installation
+# UI mode (debug)
+npx playwright test --ui
 
-1.  Clone the repository:
-    ```bash
-    git clone [https://github.com/stevenstafford72/qa-automation-demo.git](https://github.com/stevenstafford72/qa-automation-demo.git)
-    cd qa-automation-demo
-    ```
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
+# specific file
+npx playwright test tests/regression/login.spec.ts
 
-### Running Tests
+# smoke only
+npx playwright test -g "@smoke"
+View Reports
+bash
+Copy code
+# Playwright HTML
+npx playwright show-report
 
-* **Run all tests**: `npx playwright test`
-* **Run tests in UI mode**: `npx playwright test --ui`
-* **Run a specific test file**: `npx playwright test tests/login.spec.ts`
+# Allure (local)
+npm run allure:generate && npm run allure:open
+🛠️ CI/CD
+Triggers: push to main, PR to main, manual (workflow_dispatch), and daily schedule.
 
-### Viewing Reports
+Artifacts: Playwright + Allure results uploaded.
 
-After running the tests locally, you can view the Allure Report by running:
-`npx allure serve`
+Publishing: Allure report → GitHub Pages.
 
-## Project Status & Contributions
+Slack: Webhook messages on every run.
 
-This project is a personal demonstration of my skills and is complete. Feel free to explore the code, and please contact me if you have any questions.
+📂 Project Structure
+tests/smoke/* — fast health checks to gate deploys
 
-* **LinkedIn**: [linkedin.com/in/stevenstafford](https://linkedin.com/in/stevenstafford)
-* **Personal Website**: [stevenstafford.com](https://stevenstafford.com)
+tests/regression/* — functional coverage for core flows
+
+src/pages/* — Page Objects (encapsulated locators & actions)
+
+playwright.config.ts — retries, reporters, projects, tracing, screenshots
+
+🔒 Notes
+This demo avoids exposing private endpoints/data.
+
+Replace placeholder links and images with your own if needed.
+
+📬 Contact
+LinkedIn: linkedin.com/in/stevenstafford
+
+Portfolio: https://portfolio-site-one-iota.vercel.app/ 
