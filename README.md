@@ -13,7 +13,7 @@ This repository is a **public demo**; the original production pipeline lives in 
 
 ---
 
-## 🧭 TL;DR (What Recruiters Should Know)
+## 🧭 TL;DR 
 - **77 automated tests** (demo set) validate high-value user journeys (auth, forms, navigation).  
 - **Cross-browser** coverage: Chromium, Firefox, WebKit, Edge.  
 - **CI/CD native**: runs on push/PR and on a **daily scheduled regression**.  
