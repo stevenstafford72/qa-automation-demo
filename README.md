@@ -6,8 +6,6 @@ Integrated into **GitHub Actions** with **Allure reporting** and **Slack alerts*
 
 Designed to cut manual regression testing by 70% and provide real-time visibility into quality.
 
-Cross-Browser E2E Automation | Deliver Team-wide Visibility
-
 ![Status](https://img.shields.io/badge/Status-Ready-brightgreen)
 ![Stack](https://img.shields.io/badge/Stack-Playwright%20%7C%20TypeScript%20%7C%20GitHub%20Actions-blue)
 ![Reporting](https://img.shields.io/badge/Reporting-Allure-orange)
