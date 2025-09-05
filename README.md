@@ -41,6 +41,17 @@ This repository is a **public demo**; the original production pipeline lives in 
 
 ---
 
+Allure Reporting:
+<img width="1721" height="903" alt="image" src="https://github.com/user-attachments/assets/89b5f44d-cbf9-43e3-8716-77bd73d20eb3" />
+
+
+Slack Intergration: 
+
+<img width="605" height="613" alt="Screenshot 2025-09-05 at 1 55 54 PM" src="https://github.com/user-attachments/assets/837bd0e3-3439-42a4-9460-db4e08ccc018" />
+
+
+
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -98,7 +109,6 @@ playwright.config.ts — retries, reporters, projects, tracing, screenshots
 🔒 Notes
 This demo avoids exposing private endpoints/data.
 
-Replace placeholder links and images with your own if needed.
 
 📬 Contact
 LinkedIn: linkedin.com/in/stevenstafford
