@@ -1,4 +1,5 @@
-🚀 Automated QA Pipeline Demo  
+🚀 QA Automation Pipeline Demo 
+
 End-to-end test automation framework built with **Playwright + TypeScript**.  
 Integrated into **GitHub Actions** with **Allure reporting** and **Slack alerts** — designed to cut manual regression testing by 70% and provide real-time visibility into quality.
 
