@@ -1,0 +1,433 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: C-003: Place a call: with Voice Changer
+- Location: /Users/steven/Desktop/QA/qa_spoofcard_webapp_automation/tests/Daily Automation/call-tests.spec.ts:36:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByRole('button', { name: 'Make a New Call' })
+
+    at /Users/steven/Desktop/QA/qa_spoofcard_webapp_automation/tests/Daily Automation/call-tests.spec.ts:43:65
+```
+
+# Page snapshot
+
+```yaml
+- banner:
+  - link "Logo":
+    - img "Logo"
+  - navigation:
+    - list:
+      - listitem:
+        - link "Features"
+      - listitem:
+        - link "Get Our App"
+      - listitem:
+        - link "Log Out"
+      - listitem:
+        - link "Dashboard"
+- link "Place A Call"
+- link "Send A Text NEW!"
+- link "Call History"
+- link "Add Credits"
+- link "Manage Users"
+- link "Settings"
+- paragraph: Enter phone numbers
+- combobox "Phone number country":
+  - option "International"
+  - option "Afghanistan"
+  - option "Åland Islands"
+  - option "Albania"
+  - option "Algeria"
+  - option "American Samoa"
+  - option "Andorra"
+  - option "Angola"
+  - option "Anguilla"
+  - option "Antigua and Barbuda"
+  - option "Argentina"
+  - option "Armenia"
+  - option "Aruba"
+  - option "Ascension Island"
+  - option "Australia"
+  - option "Austria"
+  - option "Azerbaijan"
+  - option "Bahamas"
+  - option "Bahrain"
+  - option "Bangladesh"
+  - option "Barbados"
+  - option "Belarus"
+  - option "Belgium"
+  - option "Belize"
+  - option "Benin"
+  - option "Bermuda"
+  - option "Bhutan"
+  - option "Bolivia"
+  - option "Bonaire, Sint Eustatius and Saba"
+  - option "Bosnia and Herzegovina"
+  - option "Botswana"
+  - option "Brazil"
+  - option "British Indian Ocean Territory"
+  - option "Brunei Darussalam"
+  - option "Bulgaria"
+  - option "Burkina Faso"
+  - option "Burundi"
+  - option "Cambodia"
+  - option "Cameroon"
+  - option "Canada"
+  - option "Cape Verde"
+  - option "Cayman Islands"
+  - option "Central African Republic"
+  - option "Chad"
+  - option "Chile"
+  - option "China"
+  - option "Christmas Island"
+  - option "Cocos (Keeling) Islands"
+  - option "Colombia"
+  - option "Comoros"
+  - option "Congo"
+  - option "Congo, Democratic Republic of the"
+  - option "Cook Islands"
+  - option "Costa Rica"
+  - option "Cote d'Ivoire"
+  - option "Croatia"
+  - option "Cuba"
+  - option "Curaçao"
+  - option "Cyprus"
+  - option "Czech Republic"
+  - option "Denmark"
+  - option "Djibouti"
+  - option "Dominica"
+  - option "Dominican Republic"
+  - option "Ecuador"
+  - option "Egypt"
+  - option "El Salvador"
+  - option "Equatorial Guinea"
+  - option "Eritrea"
+  - option "Estonia"
+  - option "Ethiopia"
+  - option "Falkland Islands"
+  - option "Faroe Islands"
+  - option "Federated States of Micronesia"
+  - option "Fiji"
+  - option "Finland"
+  - option "France"
+  - option "French Guiana"
+  - option "French Polynesia"
+  - option "Gabon"
+  - option "Gambia"
+  - option "Georgia"
+  - option "Germany"
+  - option "Ghana"
+  - option "Gibraltar"
+  - option "Greece"
+  - option "Greenland"
+  - option "Grenada"
+  - option "Guadeloupe"
+  - option "Guam"
+  - option "Guatemala"
+  - option "Guernsey"
+  - option "Guinea"
+  - option "Guinea-Bissau"
+  - option "Guyana"
+  - option "Haiti"
+  - option "Holy See (Vatican City State)"
+  - option "Honduras"
+  - option "Hong Kong"
+  - option "Hungary"
+  - option "Iceland"
+  - option "India"
+  - option "Indonesia"
+  - option "Iran"
+  - option "Iraq"
+  - option "Ireland"
+  - option "Isle of Man"
+  - option "Israel"
+  - option "Italy"
+  - option "Jamaica"
+  - option "Japan"
+  - option "Jersey"
+  - option "Jordan"
+  - option "Kazakhstan"
+  - option "Kenya"
+  - option "Kiribati"
+  - option "Kosovo"
+  - option "Kuwait"
+  - option "Kyrgyzstan"
+  - option "Laos"
+  - option "Latvia"
+  - option "Lebanon"
+  - option "Lesotho"
+  - option "Liberia"
+  - option "Libya"
+  - option "Liechtenstein"
+  - option "Lithuania"
+  - option "Luxembourg"
+  - option "Macao"
+  - option "Madagascar"
+  - option "Malawi"
+  - option "Malaysia"
+  - option "Maldives"
+  - option "Mali"
+  - option "Malta"
+  - option "Marshall Islands"
+  - option "Martinique"
+  - option "Mauritania"
+  - option "Mauritius"
+  - option "Mayotte"
+  - option "Mexico"
+  - option "Moldova"
+  - option "Monaco"
+  - option "Mongolia"
+  - option "Montenegro"
+  - option "Montserrat"
+  - option "Morocco"
+  - option "Mozambique"
+  - option "Myanmar"
+  - option "Namibia"
+  - option "Nauru"
+  - option "Nepal"
+  - option "Netherlands"
+  - option "New Caledonia"
+  - option "New Zealand"
+  - option "Nicaragua"
+  - option "Niger"
+  - option "Nigeria"
+  - option "Niue"
+  - option "Norfolk Island"
+  - option "North Korea"
+  - option "North Macedonia"
+  - option "Northern Mariana Islands"
+  - option "Norway"
+  - option "Oman"
+  - option "Pakistan"
+  - option "Palau"
+  - option "Palestine"
+  - option "Panama"
+  - option "Papua New Guinea"
+  - option "Paraguay"
+  - option "Peru"
+  - option "Philippines"
+  - option "Poland"
+  - option "Portugal"
+  - option "Puerto Rico"
+  - option "Qatar"
+  - option "Reunion"
+  - option "Romania"
+  - option "Russia"
+  - option "Rwanda"
+  - option "Saint Barthélemy"
+  - option "Saint Helena"
+  - option "Saint Kitts and Nevis"
+  - option "Saint Lucia"
+  - option "Saint Martin (French Part)"
+  - option "Saint Pierre and Miquelon"
+  - option "Saint Vincent and the Grenadines"
+  - option "Samoa"
+  - option "San Marino"
+  - option "Sao Tome and Principe"
+  - option "Saudi Arabia"
+  - option "Senegal"
+  - option "Serbia"
+  - option "Seychelles"
+  - option "Sierra Leone"
+  - option "Singapore"
+  - option "Sint Maarten"
+  - option "Slovakia"
+  - option "Slovenia"
+  - option "Solomon Islands"
+  - option "Somalia"
+  - option "South Africa"
+  - option "South Korea"
+  - option "South Sudan"
+  - option "Spain"
+  - option "Sri Lanka"
+  - option "Sudan"
+  - option "Suriname"
+  - option "Svalbard and Jan Mayen"
+  - option "Swaziland"
+  - option "Sweden"
+  - option "Switzerland"
+  - option "Syria"
+  - option "Taiwan"
+  - option "Tajikistan"
+  - option "Tanzania"
+  - option "Thailand"
+  - option "Timor-Leste"
+  - option "Togo"
+  - option "Tokelau"
+  - option "Tonga"
+  - option "Trinidad and Tobago"
+  - option "Tristan da Cunha"
+  - option "Tunisia"
+  - option "Turkey"
+  - option "Turkmenistan"
+  - option "Turks and Caicos Islands"
+  - option "Tuvalu"
+  - option "Uganda"
+  - option "Ukraine"
+  - option "United Arab Emirates"
+  - option "United Kingdom"
+  - option "United States" [selected]
+  - option "Uruguay"
+  - option "Uzbekistan"
+  - option "Vanuatu"
+  - option "Venezuela"
+  - option "Vietnam"
+  - option "Virgin Islands, British"
+  - option "Virgin Islands, U.S."
+  - option "Wallis and Futuna"
+  - option "Western Sahara"
+  - option "Yemen"
+  - option "Zambia"
+  - option "Zimbabwe"
+- textbox "Number to call": (615) 635-1456
+- text: Select Number to display
+- combobox "Select Number to display (718) 313-4524 (New York - United States)": (718) 313-4524 (New York - United States)
+- button "Custom Number"
+- button "Random Number"
+- paragraph: Select a feature (optional)
+- combobox "Voice Changer Man Voice Changer": Man Voice Changer
+- text: Voice Changer
+- combobox "Background Noise None": None
+- text: Background Noise
+- button "+1 Credit"
+- text: Record
+- button "+1 Credit"
+- text: Straight to Voicemail
+- alert: Error There was an error. Please try again.
+- group:
+  - button "Place Call On My Device 1 Credit per Minute"
+- paragraph: (You'll be provided a phone number to dial)
+- text: 61 Credits
+- button "Add Credits"
+- link:
+  - img
+- contentinfo:
+  - link "Logo":
+    - img "Logo"
+  - paragraph: © 2025 SpoofCard.com
+  - navigation:
+    - list:
+      - listitem: Get Started
+      - listitem:
+        - link "Account"
+      - listitem:
+        - link "Account Settings"
+    - list:
+      - listitem: Features
+      - listitem:
+        - link "Change Your Caller ID"
+      - listitem:
+        - link "Texting"
+      - listitem:
+        - link "Record Calls"
+      - listitem:
+        - link "Straight To Voicemail"
+      - listitem:
+        - link "Disguise Your Voice"
+    - list:
+      - listitem: Learn More
+      - listitem:
+        - link "Blog"
+      - listitem:
+        - link "Support"
+    - list:
+      - listitem: About
+      - listitem:
+        - link "Legal"
+      - listitem:
+        - link "Privacy Policy"
+      - listitem:
+        - link "Terms of Service"
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 |
+   3 |
+   4 | const PHONE_NUMBER = '17326939831';
+   5 | const PIN = '4951';
+   6 | const LEGACY_PIN = '126368231';
+   7 |
+   8 |
+   9 | test.beforeEach(async ({ page }) => {
+  10 |     await page.goto('https://app.spoofcard.com/login');
+  11 |     await page.getByRole('textbox', { name: 'Enter your phone number' }).fill(PHONE_NUMBER);
+  12 |     await page.getByRole('textbox', { name: 'Enter your 4-digit PIN' }).fill(PIN);
+  13 |     await page.getByRole('button', { name: 'Log In' }).click();
+  14 |     await page.getByRole('button', { name: 'No Thanks' }).click();
+  15 | });
+  16 |
+  17 | test('C-001: Place a call: random button', async ({ page }) =>  {
+  18 |     await page.getByRole('textbox', { name: 'Number to call' }).fill('6156351456');
+  19 |     await page.getByRole('button', { name: 'Random Number' }).click();
+  20 |     await page.getByRole('button', { name: 'Place Call On My Device' }).click();
+  21 |     await page.getByText('To connect your call, please').isVisible();
+  22 |     await page.getByRole('button', { name: 'Make a New Call' }).click();
+  23 |     
+  24 | });
+  25 |
+  26 | test('C-002: Place a call: drop-down list', async ({ page }) =>  {
+  27 |     await page.getByRole('textbox', { name: 'Number to call' }).fill('6156351456');
+  28 |     await page.getByRole('combobox', { name: 'Select Number to display' }).click();
+  29 |     await page.getByRole('option', { name: '(614) 379-0919 (Ohio - United' }).click();
+  30 |     await page.getByRole('button', { name: 'Place Call On My Device' }).click();
+  31 |     await page.getByText('To connect your call, please').isVisible();
+  32 |     await page.getByRole('button', { name: 'Make a New Call' }).click();
+  33 |
+  34 | });
+  35 |
+  36 | test('C-003: Place a call: with Voice Changer', async ({ page }) =>  {
+  37 |     await page.getByRole('textbox', { name: 'Number to call' }).fill('6156351456');
+  38 |     await page.getByRole('button', { name: 'Random Number' }).click();
+  39 |     await page.getByRole('combobox', { name: 'Voice Changer None' }).click();
+  40 |     await page.getByRole('option', { name: 'Man Voice Changer play', exact: true }).click();
+  41 |     await page.getByRole('button', { name: 'Place Call On My Device' }).click();
+  42 |     await page.getByText('To connect your call, please').isVisible();
+> 43 |     await page.getByRole('button', { name: 'Make a New Call' }).click();
+     |                                                                 ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  44 |
+  45 | });
+  46 |
+  47 | test('C-004: Place a call: with Background Noise', async ({ page }) =>  {
+  48 |     await page.getByRole('textbox', { name: 'Number to call' }).fill('6156351456');
+  49 |     await page.getByRole('button', { name: 'Random Number' }).click();
+  50 |     await page.getByRole('combobox', { name: 'Background Noise None' }).click();
+  51 |     await page.getByRole('option', { name: 'Airport play' }).click();
+  52 |     await page.getByRole('button', { name: 'Place Call On My Device' }).click();
+  53 |     await page.getByText('To connect your call, please').isVisible();
+  54 |     await page.getByRole('button', { name: 'Make a New Call' }).click();
+  55 |
+  56 | });
+  57 |
+  58 | test('C-005: Place a call: with Recording', async ({ page }) =>  {
+  59 |     await page.getByRole('textbox', { name: 'Number to call' }).fill('6156351456');
+  60 |     await page.getByRole('button', { name: 'Random Number' }).click();
+  61 |     await page.locator('div').filter({ hasText: /^Record$/ }).getByLabel('+1 Credit').click();
+  62 |     await page.getByRole('button', { name: 'Place Call On My Device' }).click();
+  63 |     await page.getByText('To connect your call, please').isVisible();
+  64 |     await page.getByRole('button', { name: 'Make a New Call' }).click();
+  65 |
+  66 | });
+  67 |
+  68 | test('C-006: Place a call: with Straight To Voicemail', async ({ page }) =>  {
+  69 |     await page.getByRole('textbox', { name: 'Number to call' }).fill('6156351456');
+  70 |     await page.getByRole('button', { name: 'Random Number' }).click();
+  71 |     await page.locator('div').filter({ hasText: /^Straight to Voicemail$/ }).getByLabel('+1 Credit').click();
+  72 |     await page.getByRole('button', { name: 'Place Voicemail Call' }).click();
+  73 |     await page.getByText('Don\'t show again.').click();
+  74 |     await page.getByRole('button', { name: 'Continue' }).click();
+  75 |     await page.locator('div').filter({ hasText: /^End Call$/ }).getByRole('button').click();
+  76 | });
+```

@@ -1,0 +1,23 @@
+{
+  "name": "qa_spoofcard_webapp_automation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spoofcard/qa_spoofcard_webapp_automation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spoofcard/qa_spoofcard_webapp_automation/issues"
+  },
+  "homepage": "https://github.com/spoofcard/qa_spoofcard_webapp_automation#readme",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.51.0",
+    "@types/node": "^22.13.9",
+    "allure-playwright": "^3.2.0"
+  }
+}

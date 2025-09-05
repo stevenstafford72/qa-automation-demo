@@ -1,0 +1,188 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: SS-004: Verify Navigation to Privacy Policy Page
+- Location: /Users/steven/Desktop/QA/qa_spoofcard_webapp_automation/tests/Daily Automation/auth/signup-tests.spec.ts:60:5
+
+# Error details
+
+```
+Error: Timed out 5000ms waiting for expect(locator).toHaveURL(expected)
+
+Locator: locator(':root')
+Expected string: "https://www.spoofcard.com/privacy"
+Received string: "https://www.spoofcard.com/privacy?_gl=1*1lr0c03*_gcl_au*MTU2MjI1OTM0Ny4xNzQ1NDU3ODg1"
+Call log:
+  - expect.toHaveURL with timeout 5000ms
+  - waiting for locator(':root')
+    3 × locator resolved to <html class="" lang="en" xmlns="http://www.w3.org/1999/xhtml">…</html>
+      - unexpected value "https://www.spoofcard.com/privacy?_gl=1*1lr0c03*_gcl_au*MTU2MjI1OTM0Ny4xNzQ1NDU3ODg1"
+    - locator resolved to <html lang="en" class="pointer" xmlns="http://www.w3.org/1999/xhtml">…</html>
+    4 × unexpected value "https://www.spoofcard.com/privacy?_gl=1*1lr0c03*_gcl_au*MTU2MjI1OTM0Ny4xNzQ1NDU3ODg1"
+      - locator resolved to <html lang="en" xmlns="http://www.w3.org/1999/xhtml" class="pointer skrollr skrollr-desktop">…</html>
+    - unexpected value "https://www.spoofcard.com/privacy?_gl=1*1lr0c03*_gcl_au*MTU2MjI1OTM0Ny4xNzQ1NDU3ODg1"
+
+    at /Users/steven/Desktop/QA/qa_spoofcard_webapp_automation/tests/Daily Automation/auth/signup-tests.spec.ts:64:25
+```
+
+# Page snapshot
+
+```yaml
+- banner:
+  - link "Logo":
+    - img "Logo"
+  - navigation:
+    - list:
+      - listitem:
+        - link "Features"
+      - listitem:
+        - link "Get Our App"
+      - listitem:
+        - link "Log In"
+- heading "Protect your privacy with SpoofCard." [level=2]
+- heading "Claim your free introductory credits!" [level=2]
+- paragraph: Sign up and try all of our features for free.
+- text: Enter your email
+- textbox "Enter your email"
+- combobox "Phone number country":
+  - option "Canada"
+  - option "Mexico"
+  - option "United States" [selected]
+- textbox "Enter your phone number"
+- radiogroup:
+  - radio "Text me with the verification code." [checked]
+  - text: Text me with the verification code.
+  - radio "Call me with the verification code."
+  - text: Call me with the verification code.
+- button "Next"
+- paragraph:
+  - text: By tapping next you agree to our
+  - link "Terms of Service"
+  - text: and
+  - link "Privacy Policy"
+- paragraph:
+  - text: Already have an account?
+  - link "Log In"
+- contentinfo:
+  - link "Logo":
+    - img "Logo"
+  - paragraph: © 2025 SpoofCard.com
+  - navigation:
+    - list:
+      - listitem: Get Started
+      - listitem:
+        - link "Account"
+      - listitem:
+        - link "Account Settings"
+    - list:
+      - listitem: Features
+      - listitem:
+        - link "Change Your Caller ID"
+      - listitem:
+        - link "Texting"
+      - listitem:
+        - link "Record Calls"
+      - listitem:
+        - link "Straight To Voicemail"
+      - listitem:
+        - link "Disguise Your Voice"
+    - list:
+      - listitem: Learn More
+      - listitem:
+        - link "Blog"
+      - listitem:
+        - link "Support"
+    - list:
+      - listitem: About
+      - listitem:
+        - link "Legal"
+      - listitem:
+        - link "Privacy Policy"
+      - listitem:
+        - link "Terms of Service"
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 | // import axios from 'axios';
+   3 |
+   4 | // async function getVerificationCode(apiUrl: string, maxRetries = 5, retryInterval = 2000): Promise<string | null> {
+   5 | //     for (let i = 0; i < maxRetries; i++) {
+   6 | //         try {
+   7 | //             const response = await axios.get(apiUrl);
+   8 | //             console.log(`Attempt ${i + 1}:`, response.data); // Debugging log
+   9 |
+  10 | //             if (response.data?.verification_code) {
+  11 | //                 return response.data.verification_code;
+  12 | //             }
+  13 |
+  14 | //             // Attempt to extract a 6-digit code from a string response
+  15 | //             const match = response.data.match(/\b\d{6}\b/);
+  16 | //             if (match) return match[0];
+  17 |
+  18 | //         } catch (error) {
+  19 | //             console.error(`Attempt ${i + 1} failed: ${error.message}`);
+  20 | //         }
+  21 |
+  22 | //         if (i < maxRetries - 1) {
+  23 | //             await new Promise(resolve => setTimeout(resolve, retryInterval));
+  24 | //         }
+  25 | //     }
+  26 | //     return null;
+  27 | // 
+  28 |
+  29 |
+  30 | // // SS-001: Sign Up Flow with Email and Phone Verification
+  31 | // test.skip('SS-001: Sign Up Flow with Email and Phone Verification', async ({ page }) => {
+  32 | //     await page.goto('https://qa.spoofcard.com?x-vercel-protection-bypass=7kygzH1YPN0UdTEqTQTZRyKG2NvAxprP&x-vercel-set-bypass-cookie=true');
+  33 | //     await page.getByRole('link', { name: 'Sign Up' }).click();
+  34 | //     await page.getByRole('textbox', { name: 'Enter your email' }).fill(`testemail${Date.now()}@example.com`);
+  35 | //     await page.getByRole('textbox', { name: 'Enter your phone number' }).fill('12342310576');
+  36 | //     await page.getByRole('button', { name: 'Next' }).click();
+  37 |
+  38 | //     const apiUrl = 'https://api.retool.com/v1/workflows/79a855b2-073a-40db-9b95-e021d5ec21ee/startTrigger?workflowApiKey=retool_wk_f2b907780d064a1597e5fa972a8df9c0';
+  39 | //     const verificationCode = await getVerificationCode(apiUrl);
+  40 |
+  41 | //     if (!verificationCode) {
+  42 | //         throw new Error('Verification code not received after multiple retries');
+  43 | //     }
+  44 |
+  45 | //     await page.getByRole('textbox', { name: 'verification input' }).fill(verificationCode);
+  46 | //     await page.getByRole('button', { name: 'Verify' }).isVisible();
+  47 | //     await page.getByRole('button', { name: 'Verify' }).click();
+  48 | // });
+  49 |
+  50 | // SS-003: Verify Navigation to Terms of Service Page
+  51 | test('SS-003: Verify Navigation to Terms of Service Page', async ({ page }) => {
+  52 |     await page.goto('https://app.spoofcard.com/get-started');
+  53 |     const page1Promise = page.waitForEvent('popup');
+  54 |     await page.locator('#login-paper').getByRole('link', { name: 'Terms of Service' }).click();
+  55 |     const page1 = await page1Promise;
+  56 |     await expect(page1).toHaveURL(/https?:\/\/www.spoofcard.com\/terms-of-service/);
+  57 | });
+  58 |
+  59 | // SS-004: Verify Navigation to Privacy Policy Page
+  60 | test('SS-004: Verify Navigation to Privacy Policy Page', async ({ page }) => {
+  61 |     await page.goto('https://app.spoofcard.com/get-started');
+  62 |     await page.locator('#login-paper').getByRole('link', { name: 'Privacy Policy' }).click();
+  63 |     const page2 = await page.waitForEvent('popup');
+> 64 |     await expect(page2).toHaveURL('https://www.spoofcard.com/privacy');
+     |                         ^ Error: Timed out 5000ms waiting for expect(locator).toHaveURL(expected)
+  65 | });
+  66 |
+  67 | // SS-005: Verify Sign Up/Login Button Functionality
+  68 | test('SS-005: Verify Sign Up/Login Button Functionality', async ({ page }) => {
+  69 |     await page.goto('https://app.spoofcard.com/get-started');
+  70 |     await page.locator('#sign-up-login').click();
+  71 |
+  72 | });
+  73 |
+  74 | // SS-006: Verify Navigation to Features Page
+```

@@ -1,0 +1,361 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: LN-001: Login with Phone Number and PIN
+- Location: /Users/steven/Desktop/QA/qa_spoofcard_webapp_automation/tests/Daily Automation/fail-example-tests.spec.ts:9:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByRole('button', { name: 'No Thanks' })
+
+    at /Users/steven/Desktop/QA/qa_spoofcard_webapp_automation/tests/Daily Automation/fail-example-tests.spec.ts:16:57
+```
+
+# Page snapshot
+
+```yaml
+- banner:
+  - link "Logo":
+    - img "Logo"
+  - navigation:
+    - list:
+      - listitem:
+        - link "Features"
+      - listitem:
+        - link "Get Our App"
+      - listitem:
+        - link "Log In"
+- heading "Protect your privacy with SpoofCard." [level=2]
+- heading "Welcome back!" [level=2]
+- combobox "Phone number country":
+  - option "International"
+  - option "Afghanistan"
+  - option "Åland Islands"
+  - option "Albania"
+  - option "Algeria"
+  - option "American Samoa"
+  - option "Andorra"
+  - option "Angola"
+  - option "Anguilla"
+  - option "Antigua and Barbuda"
+  - option "Argentina"
+  - option "Armenia"
+  - option "Aruba"
+  - option "Ascension Island"
+  - option "Australia"
+  - option "Austria"
+  - option "Azerbaijan"
+  - option "Bahamas"
+  - option "Bahrain"
+  - option "Bangladesh"
+  - option "Barbados"
+  - option "Belarus"
+  - option "Belgium"
+  - option "Belize"
+  - option "Benin"
+  - option "Bermuda"
+  - option "Bhutan"
+  - option "Bolivia"
+  - option "Bonaire, Sint Eustatius and Saba"
+  - option "Bosnia and Herzegovina"
+  - option "Botswana"
+  - option "Brazil"
+  - option "British Indian Ocean Territory"
+  - option "Brunei Darussalam"
+  - option "Bulgaria"
+  - option "Burkina Faso"
+  - option "Burundi"
+  - option "Cambodia"
+  - option "Cameroon"
+  - option "Canada"
+  - option "Cape Verde"
+  - option "Cayman Islands"
+  - option "Central African Republic"
+  - option "Chad"
+  - option "Chile"
+  - option "China"
+  - option "Christmas Island"
+  - option "Cocos (Keeling) Islands"
+  - option "Colombia"
+  - option "Comoros"
+  - option "Congo"
+  - option "Congo, Democratic Republic of the"
+  - option "Cook Islands"
+  - option "Costa Rica"
+  - option "Cote d'Ivoire"
+  - option "Croatia"
+  - option "Cuba"
+  - option "Curaçao"
+  - option "Cyprus"
+  - option "Czech Republic"
+  - option "Denmark"
+  - option "Djibouti"
+  - option "Dominica"
+  - option "Dominican Republic"
+  - option "Ecuador"
+  - option "Egypt"
+  - option "El Salvador"
+  - option "Equatorial Guinea"
+  - option "Eritrea"
+  - option "Estonia"
+  - option "Ethiopia"
+  - option "Falkland Islands"
+  - option "Faroe Islands"
+  - option "Federated States of Micronesia"
+  - option "Fiji"
+  - option "Finland"
+  - option "France"
+  - option "French Guiana"
+  - option "French Polynesia"
+  - option "Gabon"
+  - option "Gambia"
+  - option "Georgia"
+  - option "Germany"
+  - option "Ghana"
+  - option "Gibraltar"
+  - option "Greece"
+  - option "Greenland"
+  - option "Grenada"
+  - option "Guadeloupe"
+  - option "Guam"
+  - option "Guatemala"
+  - option "Guernsey"
+  - option "Guinea"
+  - option "Guinea-Bissau"
+  - option "Guyana"
+  - option "Haiti"
+  - option "Holy See (Vatican City State)"
+  - option "Honduras"
+  - option "Hong Kong"
+  - option "Hungary"
+  - option "Iceland"
+  - option "India"
+  - option "Indonesia"
+  - option "Iran"
+  - option "Iraq"
+  - option "Ireland"
+  - option "Isle of Man"
+  - option "Israel"
+  - option "Italy"
+  - option "Jamaica"
+  - option "Japan"
+  - option "Jersey"
+  - option "Jordan"
+  - option "Kazakhstan"
+  - option "Kenya"
+  - option "Kiribati"
+  - option "Kosovo"
+  - option "Kuwait"
+  - option "Kyrgyzstan"
+  - option "Laos"
+  - option "Latvia"
+  - option "Lebanon"
+  - option "Lesotho"
+  - option "Liberia"
+  - option "Libya"
+  - option "Liechtenstein"
+  - option "Lithuania"
+  - option "Luxembourg"
+  - option "Macao"
+  - option "Madagascar"
+  - option "Malawi"
+  - option "Malaysia"
+  - option "Maldives"
+  - option "Mali"
+  - option "Malta"
+  - option "Marshall Islands"
+  - option "Martinique"
+  - option "Mauritania"
+  - option "Mauritius"
+  - option "Mayotte"
+  - option "Mexico"
+  - option "Moldova"
+  - option "Monaco"
+  - option "Mongolia"
+  - option "Montenegro"
+  - option "Montserrat"
+  - option "Morocco"
+  - option "Mozambique"
+  - option "Myanmar"
+  - option "Namibia"
+  - option "Nauru"
+  - option "Nepal"
+  - option "Netherlands"
+  - option "New Caledonia"
+  - option "New Zealand"
+  - option "Nicaragua"
+  - option "Niger"
+  - option "Nigeria"
+  - option "Niue"
+  - option "Norfolk Island"
+  - option "North Korea"
+  - option "North Macedonia"
+  - option "Northern Mariana Islands"
+  - option "Norway"
+  - option "Oman"
+  - option "Pakistan"
+  - option "Palau"
+  - option "Palestine"
+  - option "Panama"
+  - option "Papua New Guinea"
+  - option "Paraguay"
+  - option "Peru"
+  - option "Philippines"
+  - option "Poland"
+  - option "Portugal"
+  - option "Puerto Rico"
+  - option "Qatar"
+  - option "Reunion"
+  - option "Romania"
+  - option "Russia"
+  - option "Rwanda"
+  - option "Saint Barthélemy"
+  - option "Saint Helena"
+  - option "Saint Kitts and Nevis"
+  - option "Saint Lucia"
+  - option "Saint Martin (French Part)"
+  - option "Saint Pierre and Miquelon"
+  - option "Saint Vincent and the Grenadines"
+  - option "Samoa"
+  - option "San Marino"
+  - option "Sao Tome and Principe"
+  - option "Saudi Arabia"
+  - option "Senegal"
+  - option "Serbia"
+  - option "Seychelles"
+  - option "Sierra Leone"
+  - option "Singapore"
+  - option "Sint Maarten"
+  - option "Slovakia"
+  - option "Slovenia"
+  - option "Solomon Islands"
+  - option "Somalia"
+  - option "South Africa"
+  - option "South Korea"
+  - option "South Sudan"
+  - option "Spain"
+  - option "Sri Lanka"
+  - option "Sudan"
+  - option "Suriname"
+  - option "Svalbard and Jan Mayen"
+  - option "Swaziland"
+  - option "Sweden"
+  - option "Switzerland"
+  - option "Syria"
+  - option "Taiwan"
+  - option "Tajikistan"
+  - option "Tanzania"
+  - option "Thailand"
+  - option "Timor-Leste"
+  - option "Togo"
+  - option "Tokelau"
+  - option "Tonga"
+  - option "Trinidad and Tobago"
+  - option "Tristan da Cunha"
+  - option "Tunisia"
+  - option "Turkey"
+  - option "Turkmenistan"
+  - option "Turks and Caicos Islands"
+  - option "Tuvalu"
+  - option "Uganda"
+  - option "Ukraine"
+  - option "United Arab Emirates"
+  - option "United Kingdom"
+  - option "United States" [selected]
+  - option "Uruguay"
+  - option "Uzbekistan"
+  - option "Vanuatu"
+  - option "Venezuela"
+  - option "Vietnam"
+  - option "Virgin Islands, British"
+  - option "Virgin Islands, U.S."
+  - option "Wallis and Futuna"
+  - option "Western Sahara"
+  - option "Yemen"
+  - option "Zambia"
+  - option "Zimbabwe"
+- textbox "Enter your phone number": 1 (732) 768-1999
+- text: Enter your 4-digit PIN
+- textbox "Enter your 4-digit PIN": "1111"
+- button "Log In"
+- alert: Error (227) Login failed. Please check your information and try again.
+- text: OR
+- paragraph:
+  - text: Have a Legacy PIN?
+  - link "Log In Here"
+- paragraph:
+  - link "Forgot your PIN?"
+- paragraph:
+  - text: Don't have an account?
+  - link "Sign Up"
+- contentinfo:
+  - link "Logo":
+    - img "Logo"
+  - paragraph: © 2025 SpoofCard.com
+  - navigation:
+    - list:
+      - listitem: Get Started
+      - listitem:
+        - link "Account"
+      - listitem:
+        - link "Account Settings"
+    - list:
+      - listitem: Features
+      - listitem:
+        - link "Change Your Caller ID"
+      - listitem:
+        - link "Texting"
+      - listitem:
+        - link "Record Calls"
+      - listitem:
+        - link "Straight To Voicemail"
+      - listitem:
+        - link "Disguise Your Voice"
+    - list:
+      - listitem: Learn More
+      - listitem:
+        - link "Blog"
+      - listitem:
+        - link "Support"
+    - list:
+      - listitem: About
+      - listitem:
+        - link "Legal"
+      - listitem:
+        - link "Privacy Policy"
+      - listitem:
+        - link "Terms of Service"
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 |
+   3 | // failed test for example
+   4 |
+   5 | const PHONE_NUMBER = '17327681999';
+   6 | const PIN = '1111';
+   7 |
+   8 | // LN-001: Login with Phone Number and PIN
+   9 | test('LN-001: Login with Phone Number and PIN', async ({ page }) => {
+  10 |   await page.goto('https://app.spoofcard.com/login');
+  11 |   await page.getByRole('textbox', { name: 'Enter your phone number' }).fill(PHONE_NUMBER);
+  12 |   await page.getByRole('textbox', { name: 'Enter your 4-digit PIN' }).fill(PIN);
+  13 |   await page.getByRole('button', { name: 'Log In' }).click();
+  14 |   
+  15 |   // Attempt to click the "No Thanks" button
+> 16 |   await page.getByRole('button', { name: 'No Thanks' }).click();
+     |                                                         ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  17 |
+  18 |   await expect(page).toHaveURL('https://app.spoofcard.com/');
+  19 | });
+```
