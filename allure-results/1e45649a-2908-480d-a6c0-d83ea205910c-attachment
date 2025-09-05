@@ -1,0 +1,435 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Verify Record Calls Link Opens Record Calls Page
+- Location: /Users/steven/Desktop/QA/qa_spoofcard_webapp_automation/tests/Daily Automation/navigation/footer-tests.spec.ts:19:5
+
+# Error details
+
+```
+Error: Timed out 5000ms waiting for expect(locator).toHaveURL(expected)
+
+Locator: locator(':root')
+Expected string: "https://www.spoofcard.com/features#record-calls"
+Received string: "https://www.spoofcard.com/features?_gl=1*h9af7f*_gcl_au*ODk0Nzc2NjQxLjE3NDU0NTIzOTE.#record-calls"
+Call log:
+  - expect.toHaveURL with timeout 5000ms
+  - waiting for locator(':root')
+    3 × locator resolved to <html class="" lang="en" xmlns="http://www.w3.org/1999/xhtml">…</html>
+      - unexpected value "https://www.spoofcard.com/features?_gl=1*h9af7f*_gcl_au*ODk0Nzc2NjQxLjE3NDU0NTIzOTE.#record-calls"
+    - locator resolved to <html lang="en" class="pointer" xmlns="http://www.w3.org/1999/xhtml">…</html>
+    4 × unexpected value "https://www.spoofcard.com/features?_gl=1*h9af7f*_gcl_au*ODk0Nzc2NjQxLjE3NDU0NTIzOTE.#record-calls"
+      - locator resolved to <html lang="en" xmlns="http://www.w3.org/1999/xhtml" class="pointer skrollr skrollr-desktop">…</html>
+    - unexpected value "https://www.spoofcard.com/features?_gl=1*h9af7f*_gcl_au*ODk0Nzc2NjQxLjE3NDU0NTIzOTE.#record-calls"
+
+    at /Users/steven/Desktop/QA/qa_spoofcard_webapp_automation/tests/Daily Automation/navigation/footer-tests.spec.ts:24:23
+```
+
+# Page snapshot
+
+```yaml
+- banner:
+  - link "Logo":
+    - img "Logo"
+  - navigation:
+    - list:
+      - listitem:
+        - link "Features"
+      - listitem:
+        - link "Get Our App"
+      - listitem:
+        - link "Log In"
+- heading "Protect your privacy with SpoofCard." [level=2]
+- heading "Welcome back!" [level=2]
+- combobox "Phone number country":
+  - option "International"
+  - option "Afghanistan"
+  - option "Åland Islands"
+  - option "Albania"
+  - option "Algeria"
+  - option "American Samoa"
+  - option "Andorra"
+  - option "Angola"
+  - option "Anguilla"
+  - option "Antigua and Barbuda"
+  - option "Argentina"
+  - option "Armenia"
+  - option "Aruba"
+  - option "Ascension Island"
+  - option "Australia"
+  - option "Austria"
+  - option "Azerbaijan"
+  - option "Bahamas"
+  - option "Bahrain"
+  - option "Bangladesh"
+  - option "Barbados"
+  - option "Belarus"
+  - option "Belgium"
+  - option "Belize"
+  - option "Benin"
+  - option "Bermuda"
+  - option "Bhutan"
+  - option "Bolivia"
+  - option "Bonaire, Sint Eustatius and Saba"
+  - option "Bosnia and Herzegovina"
+  - option "Botswana"
+  - option "Brazil"
+  - option "British Indian Ocean Territory"
+  - option "Brunei Darussalam"
+  - option "Bulgaria"
+  - option "Burkina Faso"
+  - option "Burundi"
+  - option "Cambodia"
+  - option "Cameroon"
+  - option "Canada"
+  - option "Cape Verde"
+  - option "Cayman Islands"
+  - option "Central African Republic"
+  - option "Chad"
+  - option "Chile"
+  - option "China"
+  - option "Christmas Island"
+  - option "Cocos (Keeling) Islands"
+  - option "Colombia"
+  - option "Comoros"
+  - option "Congo"
+  - option "Congo, Democratic Republic of the"
+  - option "Cook Islands"
+  - option "Costa Rica"
+  - option "Cote d'Ivoire"
+  - option "Croatia"
+  - option "Cuba"
+  - option "Curaçao"
+  - option "Cyprus"
+  - option "Czech Republic"
+  - option "Denmark"
+  - option "Djibouti"
+  - option "Dominica"
+  - option "Dominican Republic"
+  - option "Ecuador"
+  - option "Egypt"
+  - option "El Salvador"
+  - option "Equatorial Guinea"
+  - option "Eritrea"
+  - option "Estonia"
+  - option "Ethiopia"
+  - option "Falkland Islands"
+  - option "Faroe Islands"
+  - option "Federated States of Micronesia"
+  - option "Fiji"
+  - option "Finland"
+  - option "France"
+  - option "French Guiana"
+  - option "French Polynesia"
+  - option "Gabon"
+  - option "Gambia"
+  - option "Georgia"
+  - option "Germany"
+  - option "Ghana"
+  - option "Gibraltar"
+  - option "Greece"
+  - option "Greenland"
+  - option "Grenada"
+  - option "Guadeloupe"
+  - option "Guam"
+  - option "Guatemala"
+  - option "Guernsey"
+  - option "Guinea"
+  - option "Guinea-Bissau"
+  - option "Guyana"
+  - option "Haiti"
+  - option "Holy See (Vatican City State)"
+  - option "Honduras"
+  - option "Hong Kong"
+  - option "Hungary"
+  - option "Iceland"
+  - option "India"
+  - option "Indonesia"
+  - option "Iran"
+  - option "Iraq"
+  - option "Ireland"
+  - option "Isle of Man"
+  - option "Israel"
+  - option "Italy"
+  - option "Jamaica"
+  - option "Japan"
+  - option "Jersey"
+  - option "Jordan"
+  - option "Kazakhstan"
+  - option "Kenya"
+  - option "Kiribati"
+  - option "Kosovo"
+  - option "Kuwait"
+  - option "Kyrgyzstan"
+  - option "Laos"
+  - option "Latvia"
+  - option "Lebanon"
+  - option "Lesotho"
+  - option "Liberia"
+  - option "Libya"
+  - option "Liechtenstein"
+  - option "Lithuania"
+  - option "Luxembourg"
+  - option "Macao"
+  - option "Madagascar"
+  - option "Malawi"
+  - option "Malaysia"
+  - option "Maldives"
+  - option "Mali"
+  - option "Malta"
+  - option "Marshall Islands"
+  - option "Martinique"
+  - option "Mauritania"
+  - option "Mauritius"
+  - option "Mayotte"
+  - option "Mexico"
+  - option "Moldova"
+  - option "Monaco"
+  - option "Mongolia"
+  - option "Montenegro"
+  - option "Montserrat"
+  - option "Morocco"
+  - option "Mozambique"
+  - option "Myanmar"
+  - option "Namibia"
+  - option "Nauru"
+  - option "Nepal"
+  - option "Netherlands"
+  - option "New Caledonia"
+  - option "New Zealand"
+  - option "Nicaragua"
+  - option "Niger"
+  - option "Nigeria"
+  - option "Niue"
+  - option "Norfolk Island"
+  - option "North Korea"
+  - option "North Macedonia"
+  - option "Northern Mariana Islands"
+  - option "Norway"
+  - option "Oman"
+  - option "Pakistan"
+  - option "Palau"
+  - option "Palestine"
+  - option "Panama"
+  - option "Papua New Guinea"
+  - option "Paraguay"
+  - option "Peru"
+  - option "Philippines"
+  - option "Poland"
+  - option "Portugal"
+  - option "Puerto Rico"
+  - option "Qatar"
+  - option "Reunion"
+  - option "Romania"
+  - option "Russia"
+  - option "Rwanda"
+  - option "Saint Barthélemy"
+  - option "Saint Helena"
+  - option "Saint Kitts and Nevis"
+  - option "Saint Lucia"
+  - option "Saint Martin (French Part)"
+  - option "Saint Pierre and Miquelon"
+  - option "Saint Vincent and the Grenadines"
+  - option "Samoa"
+  - option "San Marino"
+  - option "Sao Tome and Principe"
+  - option "Saudi Arabia"
+  - option "Senegal"
+  - option "Serbia"
+  - option "Seychelles"
+  - option "Sierra Leone"
+  - option "Singapore"
+  - option "Sint Maarten"
+  - option "Slovakia"
+  - option "Slovenia"
+  - option "Solomon Islands"
+  - option "Somalia"
+  - option "South Africa"
+  - option "South Korea"
+  - option "South Sudan"
+  - option "Spain"
+  - option "Sri Lanka"
+  - option "Sudan"
+  - option "Suriname"
+  - option "Svalbard and Jan Mayen"
+  - option "Swaziland"
+  - option "Sweden"
+  - option "Switzerland"
+  - option "Syria"
+  - option "Taiwan"
+  - option "Tajikistan"
+  - option "Tanzania"
+  - option "Thailand"
+  - option "Timor-Leste"
+  - option "Togo"
+  - option "Tokelau"
+  - option "Tonga"
+  - option "Trinidad and Tobago"
+  - option "Tristan da Cunha"
+  - option "Tunisia"
+  - option "Turkey"
+  - option "Turkmenistan"
+  - option "Turks and Caicos Islands"
+  - option "Tuvalu"
+  - option "Uganda"
+  - option "Ukraine"
+  - option "United Arab Emirates"
+  - option "United Kingdom"
+  - option "United States" [selected]
+  - option "Uruguay"
+  - option "Uzbekistan"
+  - option "Vanuatu"
+  - option "Venezuela"
+  - option "Vietnam"
+  - option "Virgin Islands, British"
+  - option "Virgin Islands, U.S."
+  - option "Wallis and Futuna"
+  - option "Western Sahara"
+  - option "Yemen"
+  - option "Zambia"
+  - option "Zimbabwe"
+- textbox "Enter your phone number"
+- text: Enter your 4-digit PIN
+- textbox "Enter your 4-digit PIN"
+- button "Log In"
+- text: OR
+- paragraph:
+  - text: Have a Legacy PIN?
+  - link "Log In Here"
+- paragraph:
+  - link "Forgot your PIN?"
+- paragraph:
+  - text: Don't have an account?
+  - link "Sign Up"
+- contentinfo:
+  - link "Logo":
+    - img "Logo"
+  - paragraph: © 2025 SpoofCard.com
+  - navigation:
+    - list:
+      - listitem: Get Started
+      - listitem:
+        - link "Account"
+      - listitem:
+        - link "Account Settings"
+    - list:
+      - listitem: Features
+      - listitem:
+        - link "Change Your Caller ID"
+      - listitem:
+        - link "Texting"
+      - listitem:
+        - link "Record Calls"
+      - listitem:
+        - link "Straight To Voicemail"
+      - listitem:
+        - link "Disguise Your Voice"
+    - list:
+      - listitem: Learn More
+      - listitem:
+        - link "Blog"
+      - listitem:
+        - link "Support"
+    - list:
+      - listitem: About
+      - listitem:
+        - link "Legal"
+      - listitem:
+        - link "Privacy Policy"
+      - listitem:
+        - link "Terms of Service"
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 |
+   3 |
+   4 |
+   5 | test(' Verify Footer Logo links to Home', async ({ page }) => {
+   6 |   await page.goto('https://app.spoofcard.com/get-started');
+   7 |   await page.locator('#footer-logo').click();
+   8 |   await expect(page).toHaveURL('https://app.spoofcard.com/login');
+   9 | });
+  10 |
+  11 | test('Verify Texting Link Opens Texting Page', async ({ page }) => {
+  12 |   await page.goto('https://app.spoofcard.com/login');
+  13 |   const page1Promise = page.waitForEvent('popup');
+  14 |   await page.getByRole('link', { name: 'Texting' }).click();
+  15 |   const page1 = await page1Promise;
+  16 |   await expect(page1).toHaveURL('https://www.spoofcard.com/texting');
+  17 | });
+  18 |
+  19 | test('Verify Record Calls Link Opens Record Calls Page', async ({ page }) => {
+  20 |   await page.goto('https://app.spoofcard.com/login');
+  21 |   const page1Promise = page.waitForEvent('popup');
+  22 |   await page.getByRole('link', { name: 'Record Calls' }).click();
+  23 |   const page1 = await page1Promise;
+> 24 |   await expect(page1).toHaveURL('https://www.spoofcard.com/features#record-calls');
+     |                       ^ Error: Timed out 5000ms waiting for expect(locator).toHaveURL(expected)
+  25 | });
+  26 |
+  27 | test('Verify Straight To Voicemail Link Opens Voicemail Page', async ({ page }) => {
+  28 |   await page.goto('https://app.spoofcard.com/login');
+  29 |   const page1Promise = page.waitForEvent('popup');
+  30 |   await page.getByRole('link', { name: 'Straight To Voicemail' }).click();
+  31 |   const page1 = await page1Promise;
+  32 |   await expect(page1).toHaveURL('https://www.spoofcard.com/straight-to-voicemail');
+  33 | });
+  34 |
+  35 | test('Verify Disguise Your Voice Link Opens Voice Changer Page', async ({ page }) => {
+  36 |   await page.goto('https://app.spoofcard.com/login');
+  37 |   const page1Promise = page.waitForEvent('popup');
+  38 |   await page.getByRole('link', { name: 'Disguise Your Voice' }).click();
+  39 |   const page1 = await page1Promise;
+  40 |   await expect(page1).toHaveURL('https://www.spoofcard.com/features#control-voice');
+  41 | });
+  42 |
+  43 | test('Verify Blog Link Opens Blog Page', async ({ page }) => {
+  44 |   await page.goto('https://app.spoofcard.com/login');
+  45 |   const page1Promise = page.waitForEvent('popup');
+  46 |   await page.getByRole('link', { name: 'Blog' }).click();
+  47 |   const page1 = await page1Promise;
+  48 |   await expect(page1).toHaveURL('https://www.spoofcard.com/blog');
+  49 | });
+  50 |
+  51 | test('Verify Support Link Opens Support Page', async ({ page }) => {
+  52 |   await page.goto('https://app.spoofcard.com/login');
+  53 |   const page1Promise = page.waitForEvent('popup');
+  54 |   await page.getByRole('link', { name: 'Support' }).click();
+  55 |   const page1 = await page1Promise; 
+  56 |   await expect(page1).toHaveURL('https://appstudio.zendesk.com/hc/en-us');
+  57 | });
+  58 |
+  59 | test('Verify Legal Link Opens Legal Page', async ({ page }) => {
+  60 |   await page.goto('https://app.spoofcard.com/login');
+  61 |   const page1Promise = page.waitForEvent('popup');
+  62 |   await page.getByRole('link', { name: 'Legal' }).click();
+  63 |   const page1 = await page1Promise;
+  64 |   await expect(page1).toHaveURL('https://www.spoofcard.com/legal');
+  65 | });
+  66 |
+  67 | test('Verify Privacy Policy Link Opens Privacy Page', async ({ page }) => {
+  68 |   await page.goto('https://app.spoofcard.com/login');
+  69 |   const page1Promise = page.waitForEvent('popup');
+  70 |   await page.getByRole('link', { name: 'Privacy Policy' }).click();
+  71 |   const page1 = await page1Promise;
+  72 |   await expect(page1).toHaveURL('https://www.spoofcard.com/privacy');
+  73 | });
+  74 |
+  75 | test('Verify Terms of Service Link Opens Terms Page', async ({ page }) => {
+  76 |   await page.goto('https://app.spoofcard.com/login');
+  77 |   const page1Promise = page.waitForEvent('popup');
+  78 |   await page.getByRole('link', { name: 'Terms of Service' }).click();
+  79 |   const page1 = await page1Promise;
+  80 |   await expect(page1).toHaveURL(/https?:\/\/www.spoofcard.com\/terms-of-service/);
+  81 |
+  82 | });
+  83 |
+```

@@ -1,0 +1,177 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: LP-002: Open Features Page in New Tab
+- Location: /Users/steven/Desktop/QA/qa_spoofcard_webapp_automation/tests/Daily Automation/navigation/header-tests.spec.ts:14:5
+
+# Error details
+
+```
+Error: Timed out 5000ms waiting for expect(locator).toHaveURL(expected)
+
+Locator: locator(':root')
+Expected string: "https://www.spoofcard.com/features"
+Received string: "https://www.spoofcard.com/features?_gl=1*183m76v*_gcl_au*NjMwODY4MzMuMTc0NTQ1Mjc1MQ.."
+Call log:
+  - expect.toHaveURL with timeout 5000ms
+  - waiting for locator(':root')
+    3 × locator resolved to <html class="" lang="en" xmlns="http://www.w3.org/1999/xhtml">…</html>
+      - unexpected value "https://www.spoofcard.com/features?_gl=1*183m76v*_gcl_au*NjMwODY4MzMuMTc0NTQ1Mjc1MQ.."
+    - locator resolved to <html lang="en" class="pointer" xmlns="http://www.w3.org/1999/xhtml">…</html>
+    4 × unexpected value "https://www.spoofcard.com/features?_gl=1*183m76v*_gcl_au*NjMwODY4MzMuMTc0NTQ1Mjc1MQ.."
+      - locator resolved to <html lang="en" xmlns="http://www.w3.org/1999/xhtml" class="pointer skrollr skrollr-desktop">…</html>
+    - unexpected value "https://www.spoofcard.com/features?_gl=1*183m76v*_gcl_au*NjMwODY4MzMuMTc0NTQ1Mjc1MQ.."
+
+    at /Users/steven/Desktop/QA/qa_spoofcard_webapp_automation/tests/Daily Automation/navigation/header-tests.spec.ts:19:23
+```
+
+# Page snapshot
+
+```yaml
+- banner:
+  - link "Logo":
+    - img "Logo"
+  - navigation:
+    - list:
+      - listitem:
+        - link "Features"
+      - listitem:
+        - link "Get Our App"
+      - listitem:
+        - link "Log In"
+- heading "Protect your privacy with SpoofCard." [level=2]
+- heading "Claim your free introductory credits!" [level=2]
+- paragraph: Sign up and try all of our features for free.
+- text: Enter your email
+- textbox "Enter your email"
+- combobox "Phone number country":
+  - option "Canada"
+  - option "Mexico"
+  - option "United States" [selected]
+- textbox "Enter your phone number"
+- radiogroup:
+  - radio "Text me with the verification code." [checked]
+  - text: Text me with the verification code.
+  - radio "Call me with the verification code."
+  - text: Call me with the verification code.
+- button "Next"
+- paragraph:
+  - text: By tapping next you agree to our
+  - link "Terms of Service"
+  - text: and
+  - link "Privacy Policy"
+- paragraph:
+  - text: Already have an account?
+  - link "Log In"
+- contentinfo:
+  - link "Logo":
+    - img "Logo"
+  - paragraph: © 2025 SpoofCard.com
+  - navigation:
+    - list:
+      - listitem: Get Started
+      - listitem:
+        - link "Account"
+      - listitem:
+        - link "Account Settings"
+    - list:
+      - listitem: Features
+      - listitem:
+        - link "Change Your Caller ID"
+      - listitem:
+        - link "Texting"
+      - listitem:
+        - link "Record Calls"
+      - listitem:
+        - link "Straight To Voicemail"
+      - listitem:
+        - link "Disguise Your Voice"
+    - list:
+      - listitem: Learn More
+      - listitem:
+        - link "Blog"
+      - listitem:
+        - link "Support"
+    - list:
+      - listitem: About
+      - listitem:
+        - link "Legal"
+      - listitem:
+        - link "Privacy Policy"
+      - listitem:
+        - link "Terms of Service"
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 |
+   3 | const PhoneNumber = '17326939831';
+   4 | const Pin = '4951';
+   5 |
+   6 | // LP-001: Navigate to Login Page via Header Logo
+   7 | test('LP-001: Navigate to Login Page via Header Logo', async ({ page }) => {
+   8 |   await page.goto('https://app.spoofcard.com/get-started');
+   9 |   await page.locator('#header-logo').click();
+  10 |   await expect(page).toHaveURL('https://app.spoofcard.com/login');
+  11 | });
+  12 |
+  13 | // LP-002: Open Features Page in New Tab
+  14 | test('LP-002: Open Features Page in New Tab', async ({ page }) => {
+  15 |   await page.goto('https://app.spoofcard.com/get-started');
+  16 |   const page1Promise = page.waitForEvent('popup');
+  17 |   await page.getByRole('link', { name: 'Features' }).click();
+  18 |   const page1 = await page1Promise;
+> 19 |   await expect(page1).toHaveURL('https://www.spoofcard.com/features');
+     |                       ^ Error: Timed out 5000ms waiting for expect(locator).toHaveURL(expected)
+  20 | });
+  21 |
+  22 | // LP-003: Navigate to Login Page via Log In Link
+  23 | test('LP-003: Navigate to Login Page via Log In Link', async ({ page }) => {
+  24 |   await page.goto('https://app.spoofcard.com/get-started');
+  25 |   await page.getByRole('banner').getByRole('link', { name: 'Log In' }).click();
+  26 |   await expect(page).toHaveURL('https://app.spoofcard.com/login');
+  27 | });
+  28 |
+  29 | // LP-004: Open Get Our App Page in New Tab
+  30 | test('LP-004: Open Get Our App Page in New Tab', async ({ page }) => {
+  31 |   await page.goto('https://app.spoofcard.com/get-started');
+  32 |   const page2Promise = page.waitForEvent('popup');
+  33 |   await page.getByRole('link', { name: 'Get Our App' }).click();
+  34 |   const page2 = await page2Promise;
+  35 |   await expect(page2).toHaveURL('https://www.spoofcard.com/');
+  36 | });
+  37 |
+  38 | // CP-001: Verify Logout Redirects to Login Page
+  39 | test('CP-001: Verify Logout Redirects to Login Page', async ({ page }) => {
+  40 |   await page.goto('https://app.spoofcard.com/login');
+  41 |   await page.getByRole('textbox', { name: 'Enter your phone number' }).fill(PhoneNumber);
+  42 |   await page.getByRole('textbox', { name: 'Enter your 4-digit PIN' }).fill(Pin);
+  43 |   await page.getByRole('button', { name: 'Log In' }).click();
+  44 |   await page.getByRole('button', { name: 'No Thanks' }).click();
+  45 |   await expect(page).toHaveURL('https://app.spoofcard.com/');
+  46 |   await page.getByRole('link', { name: 'Log Out' }).click();
+  47 |   await expect(page).toHaveURL('https://app.spoofcard.com/login');
+  48 | });
+  49 |
+  50 | // CP-002: Dashboard Navigates to Call Page
+  51 | test('CP-003: Dashboard Navigates to Call Page', async ({ page }) => {
+  52 |   await page.goto('https://app.spoofcard.com/login');
+  53 |   await page.getByRole('textbox', { name: 'Enter your phone number' }).fill(PhoneNumber);
+  54 |   await page.getByRole('textbox', { name: 'Enter your 4-digit PIN' }).fill(Pin);
+  55 |   await page.getByRole('button', { name: 'Log In' }).click();
+  56 |   await page.getByRole('button', { name: 'No Thanks' }).click();
+  57 |   await page.getByRole('link', { name: 'Settings', exact: true }).click();
+  58 |   await expect(page).toHaveURL('https://app.spoofcard.com/settings');
+  59 |   await page.getByRole('link', { name: 'Dashboard' }).click();
+  60 |   await expect(page).toHaveURL('https://app.spoofcard.com/');
+  61 | });
+  62 |
+  63 |
+```
