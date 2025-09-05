@@ -1,7 +1,12 @@
 🚀 QA Automation Pipeline Demo 
 
 End-to-end test automation framework built with **Playwright + TypeScript**.  
-Integrated into **GitHub Actions** with **Allure reporting** and **Slack alerts** — designed to cut manual regression testing by 70% and provide real-time visibility into quality.
+
+Integrated into **GitHub Actions** with **Allure reporting** and **Slack alerts** 
+
+Designed to cut manual regression testing by 70% and provide real-time visibility into quality.
+
+Cross-Browser E2E Automation | Deliver Team-wide Visibility
 
 ![Status](https://img.shields.io/badge/Status-Ready-brightgreen)
 ![Stack](https://img.shields.io/badge/Stack-Playwright%20%7C%20TypeScript%20%7C%20GitHub%20Actions-blue)
@@ -9,6 +14,7 @@ Integrated into **GitHub Actions** with **Allure reporting** and **Slack alerts*
 ![Alerts](https://img.shields.io/badge/Alerts-Slack-purple)
 
 A scalable QA automation pipeline built with **Playwright + TypeScript**, integrated with **GitHub Actions**, publishing **Allure** reports, and sending **Slack** notifications.  
+
 This repository is a **public demo**; the original production pipeline lives in a private company repo.
 
 ---
